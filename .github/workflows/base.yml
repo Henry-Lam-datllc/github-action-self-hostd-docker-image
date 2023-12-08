@@ -28,7 +28,7 @@ jobs:
       #     username: ${{ secrets.DOCKER_USER }}
       #     password: ${{ secrets.DOCKER_TOKEN }}
       - name: Build and push
-        run: echo "hello henry i am a sefl runner =))"
+        run: docker buid -t henrylam -f Dockerfile.base .
 
   # ubuntu_base_deploy:
   #   runs-on: ubuntu-latest
