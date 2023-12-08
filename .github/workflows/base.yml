@@ -28,7 +28,7 @@ jobs:
       #     username: ${{ secrets.DOCKER_USER }}
       #     password: ${{ secrets.DOCKER_TOKEN }}
       - name: Build and push
-        run: docker buildx -t henrylam -f Dockerfile.base .
+        run: docker buildx -f Dockerfile.base .
 
   # ubuntu_base_deploy:
   #   runs-on: ubuntu-latest
