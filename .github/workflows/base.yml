@@ -28,7 +28,16 @@ jobs:
       #     username: ${{ secrets.DOCKER_USER }}
       #     password: ${{ secrets.DOCKER_TOKEN }}
       - name: Build and push
-        run: docker buildx build -f Dockerfile.base -t henry:latest .
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile.base
+          pull: true
+          push: true
+          tags: henry:latest
+          platforms: linux/x64
+          # cache-from: type=gha
+          # cache-to: type=gha,mode=max
 
   # ubuntu_base_deploy:
   #   runs-on: ubuntu-latest
