@@ -28,16 +28,7 @@ jobs:
       #     username: ${{ secrets.DOCKER_USER }}
       #     password: ${{ secrets.DOCKER_TOKEN }}
       - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: Dockerfile.base
-          pull: true
-          push: true
-          tags: ${{ env.ORG }}/github-runner-base:latest
-          platforms: linux/amd64,linux/arm64
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+        run: echo "hello henry i am a sefl runner =))"
 
   # ubuntu_base_deploy:
   #   runs-on: ubuntu-latest
