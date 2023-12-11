@@ -55,16 +55,16 @@ WORKDIR /actions-runner
 # Switch to the runner user.
 USER runner
 
-# Download the runner package.
-RUN curl -o actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz -L \
-    https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz \
-    && tar xzf ./actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz \
-    && rm actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz
+# # Download the runner package.
+# RUN curl -o actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz -L \
+#     https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz \
+#     && tar xzf ./actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz \
+#     && rm actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz
 
-# Optional: Validate the hash.
-# The hash in the following line should match the one provided by GitHub in your screenshot.
-# Ensure that the SHA256 hash matches the one for your downloaded version.
-RUN echo "SHA256_HASH actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz" | shasum -a 256 -c
+# # Optional: Validate the hash.
+# # The hash in the following line should match the one provided by GitHub in your screenshot.
+# # Ensure that the SHA256 hash matches the one for your downloaded version.
+# RUN echo "SHA256_HASH actions-runner-linux-arm64-${RUNNER_VERSION}.tar.gz" | shasum -a 256 -c
 
 # Expose necessary ports (if any)
 # For example, if you need to expose port 8080 for a web application, uncomment the next line.
