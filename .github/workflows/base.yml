@@ -2,7 +2,7 @@ name: GitHub Actions Runner in Docker - Base
 on:
   workflow_dispatch:
     paths:
-      - Dockerfile
+      - Dockerfile.base
       - .github/workflows/base.yml
     branches:
       - main
