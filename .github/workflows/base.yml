@@ -27,8 +27,8 @@ jobs:
         # with:
         #   username: ${{ secrets.DOCKER_USER }}
         #   password: ${{ secrets.DOCKER_TOKEN }}
-      - name: Build and push
-        run: sudo docker build -t henrylam2501 -f Dockerfile .
+      # - name: Build and push
+      #   run: sudo docker build -t henrylam2501 -f Dockerfile .
           # cache-from: type=gha
           # cache-to: type=gha,mode=max
 
