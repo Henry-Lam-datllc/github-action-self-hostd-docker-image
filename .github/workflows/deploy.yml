@@ -44,14 +44,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Calculate Steps Log Time
-        id: duration
-        uses: RockyIsHere/actions-calculate-log-time@v0.2.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-      - name: Print Calculated Time
-        run: |
-          echo "Calculated Time: ${{ steps.duration.outputs.duration }}"
+      # - name: Calculate Steps Log Time
+      #   id: duration
+      #   uses: RockyIsHere/actions-calculate-log-time@v0.2.4
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+      # - name: Print Calculated Time
+      #   run: |
+      #     echo "Calculated Time: ${{ steps.duration.outputs.duration }}"
           
       - name: Check dist workflow duration
         uses: channyein87/workflow-duration-action@v1
