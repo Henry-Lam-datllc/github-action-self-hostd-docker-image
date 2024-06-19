@@ -57,7 +57,7 @@ jobs:
         with:
           repository: github-action-self-hostd-docker-image
           workflow: deploy.yml
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GIT_TOKEN }}
       - name: Get the output of duration
         run: |
           echo "The check dist workflow is ${{ steps.check-dist.outputs.duration }} long."
