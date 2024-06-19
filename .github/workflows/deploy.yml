@@ -55,7 +55,7 @@ jobs:
         uses: channyein87/workflow-duration-action@v1
         id: check-dist
         with:
-          repository: github-action-self-hostd-docker-image
+          repository: henry-lam-datllc/github-action-self-hostd-docker-image.git
           workflow: deploy.yml
           github_token: ${{ secrets.GIT_TOKEN }}
       - name: Get the output of duration
