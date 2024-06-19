@@ -51,16 +51,15 @@ jobs:
       #     platforms: linux/amd64,linux/arm64
       #     cache-from: type=gha
       #     cache-to: type=gha,mode=max
-      - name: Check dist workflow duration
-        uses: channyein87/workflow-duration-action@v1
-        id: check-dist
-        with:
-          repository: henry-lam-datllc/github-action-self-hostd-docker-image.git
-          workflow: henry-lam-datllc/github-action-self-hostd-docker-image.git/.github/workflows/deploy.yml
-          github_token: ${{ secrets.GIT_TOKEN }}
-      - name: Get the output of duration
+      - name: Calculate Steps Log Time
+        id: duration
+        uses: RockyIsHere/actions-calculate-log-time@v0.2.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+      - name: Print Calculated Time
         run: |
-          echo "The check dist workflow is ${{ steps.check-dist.outputs.duration }} long."
+          echo "Calculated Time: ${{ steps.duration.outputs.duration }}"
   # ubuntu_deploy:
   #   runs-on: ubuntu-latest
   #   strategy:
