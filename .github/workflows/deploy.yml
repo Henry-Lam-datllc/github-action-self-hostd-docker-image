@@ -40,17 +40,17 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: Dockerfile
-          pull: true
-          push: true
-          tags: ghcr.io/${{ github.repository }}:latest
-          platforms: linux/amd64,linux/arm64
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+      # - name: Build and push
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: .
+      #     file: Dockerfile
+      #     pull: true
+      #     push: true
+      #     tags: ghcr.io/${{ github.repository }}:latest
+      #     platforms: linux/amd64,linux/arm64
+      #     cache-from: type=gha
+      #     cache-to: type=gha,mode=max
       - name: Check dist workflow duration
         uses: channyein87/workflow-duration-action@v1
         id: check-dist
