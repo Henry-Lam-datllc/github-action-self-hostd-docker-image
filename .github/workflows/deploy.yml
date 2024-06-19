@@ -56,7 +56,7 @@ jobs:
         id: check-dist
         with:
           repository: henry-lam-datllc/github-action-self-hostd-docker-image.git
-          workflow: .github/workflows/deploy.yml
+          workflow: henry-lam-datllc/github-action-self-hostd-docker-image.git/.github/workflows/deploy.yml
           github_token: ${{ secrets.GIT_TOKEN }}
       - name: Get the output of duration
         run: |
