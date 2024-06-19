@@ -52,3 +52,16 @@ jobs:
       - name: Print Calculated Time
         run: |
           echo "Calculated Time: ${{ steps.duration.outputs.duration }}"
+          
+      - name: Check dist workflow duration
+        uses: channyein87/workflow-duration-action@v1
+        id: check-dist
+        with:
+          repository: henry-lam-datllc/github-action-self-hostd-docker-image
+          workflow: deploy.yml
+          github_token: ${{ secrets.GIT_TOKEN }}
+          
+      - name: Get the output of duration
+        run: |
+          echo "The test workflow is ${{ steps.test.outputs.duration }} long."
+          echo "The check dist workflow is ${{ steps.check-dist.outputs.duration }} long."
